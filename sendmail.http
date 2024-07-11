@@ -1,0 +1,47 @@
+### PRUEBA DE CORREO EXITOSO
+POST http://localhost/api/v1/endpoint-webservice/
+Content-Type: "application/json"
+
+{
+  "name": "Pepe",
+  "email": "pepe@gmail.com",
+  "message": "Buenos dias"
+}
+###  "status": "success", "message": "Correo enviado correctamente."
+ 
+
+### PRUEBA DE CORREO CON ALGUN DATO FALTANTE
+POST http://localhost/api/v1/endpoint-webservice/
+Content-Type: "application/json"
+
+{
+  "name": "Pepe",
+  "email": "pepe@gmail.com",
+  "message": ""
+}
+###  "status": "error",  "message": "Datos inv\u00e1lidos."
+
+
+### PRUEBA DE CORREO CON EMAIL ERRONEO
+POST http://localhost/api/v1/endpoint-webservice/
+Content-Type: "application/json"
+
+{
+  "name": "Pepe",
+  "email": "pepegmail.com",
+  "message": "Buenas tardes"
+}
+###   "status": "error",  "message": "Datos inv\u00e1lidos."
+
+
+### PRUEBA DE CORREO CON TODOS LOS DATOS FALTANTES
+POST http://localhost/api/v1/endpoint-webservice/
+Content-Type: "application/json"
+
+{
+  "name": "",
+  "email": "",
+  "message": ""
+}
+
+###   "status": "error",  "message": "Datos inv\u00e1lidos."
